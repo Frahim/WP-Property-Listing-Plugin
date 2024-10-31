@@ -31,7 +31,7 @@ a{
 .bg-dark{
     background: #000;
 }
-.bg-red{
+.bg-read{
     background: #f14e4e;
 }
 .bg-dark-of{
@@ -312,22 +312,22 @@ button.searchbtn.pattern-dark {
 }
 /* Red */
 
-button.searchbtn.pattern-red{
+button.searchbtn.pattern-read{
     background:#eb2f50;
     color: #fff;
     border: none
 }
 
-.pattern-red span.svg-icon svg path {
+.pattern-read span.svg-icon svg path {
     fill:#eb2f50;
 }
-.pattern-red  a.rdmlink{
+.pattern-read  a.rdmlink{
     background: #eb2f50;
     color: #fff !important;
 }
-.pattern-red a.rdmlink:hover {
+.pattern-read a.rdmlink:hover {
    background: #000;
    
 }
 
-.pattern-red .property-item{background:#ffe7e7;}
+.pattern-read .property-item{background:#ffe7e7;}

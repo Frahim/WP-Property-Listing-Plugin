@@ -79,7 +79,7 @@ function properties_form_submit_render() {
     $choices = [
         'pattern-white' => 'Light',
         'pattern-dark' => 'Dark',
-        'pattern-red' => 'Red',
+        'pattern-read' => 'Read',
     ];
     ?>
     <select name='properties_form_submit'>
