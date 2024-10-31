@@ -5,54 +5,8 @@ Add Plugin Front-End CSS here
 /*---------------------------
 CSS Filters
 ---------------------------*/
-.blur {
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-}
-
-.brightness {
-    -webkit-filter: brightness(0.30);
-    filter: brightness(0.30);
-}
-
-.contrast {
-    -webkit-filter: contrast(180%);
-    filter: contrast(180%);
-}
-
-.grayscale {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}
-
-.huerotate {
-    -webkit-filter: hue-rotate(180deg);
-    filter: hue-rotate(180deg);
-}
-
-.invert {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-}
-
-.opacity {
-    -webkit-filter: opacity(50%);
-    filter: opacity(50%);
-}
-
-.saturate {
-    -webkit-filter: saturate(7);
-    filter: saturate(7);
-}
-
-.sepia {
-    -webkit-filter: sepia(100%);
-    filter: sepia(100%);
-}
-
-.shadow {
-    -webkit-filter: drop-shadow(8px 8px 10px green);
-    filter: drop-shadow(8px 8px 10px green);
+a{
+    text-decoration: none
 }
 .w-16{
     flex: 0 0 16%;
@@ -81,7 +35,7 @@ CSS Filters
     background: #f14e4e;
 }
 .bg-dark-of{
-   background: #231f1e; 
+    background: #231f1e;
 }
 .text-white{
     color: #fff;
@@ -94,6 +48,7 @@ CSS Filters
     height: 45px;
     margin-bottom: 10px;
     padding:0 8px;
+    border: none;
 }
 
 form#properties-search-form {
@@ -111,41 +66,44 @@ button.searchbtn {
     min-width: 150px;
 }
 h2.title-search-wrwpper {
-    color: var(--white, #FFF);
     text-align: center;
     font-size: 54px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-div#properties-search-results {
+ul#properties-search-results {
+    padding: 0;
+    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
+    gap: 30px;
+    justify-content: center;
+}
+
+ul#properties-search-results li{
+    flex: 0 0 30%;
 }
 
 .property-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 30px;
+    box-shadow: 0px 0px 10px #ededed;
+    border-radius: 5px;
 }
 .double-item {
     display: flex;
     flex-direction: column;
-
+    flex: 1 1 100%;
+    padding: 20px;
 }
 
-a.property_title {
-    color: #000 !important;
+a.property_title { 
     font-size: 18px;
 }
-span.svg-icon svg path {
-    fill: #009aff;
-}
+
 span.svg-icon svg {
-    width: 30px;
+    width:20px;
 }
 span.property_asset{
     margin: 10px 0;
@@ -154,21 +112,17 @@ span.property_asset, span.property_asset>span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-span.property_asset>span{
     gap:10px;
 }
 
+
 a.rdmlink {
-    background: #f14e4e;
     padding: 8px 30px;
     display: inline-block;
     color: #fff !important;
     border-radius: 5px;
 }
-a.rdmlink:hover {
-    background:#8a57ea
-}
+
 
 /* single Prorperty */
 .single_property_banner h1 {
@@ -203,7 +157,7 @@ span.address_property {
 }
 span.wrap-title {
     color: #ffffff;
-    display: block;    
+    display: block;
 }
 span.property_price {
     color: #88ff88;
@@ -239,6 +193,12 @@ span.property_price {
     line-height: 52px;
     text-transform: capitalize;
 }
+
+.property_thumbnail, .property_thumbnail img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
 /*--------------------------- 
 Responsive CSS here 
 *
@@ -256,6 +216,9 @@ Medium/Large Screens
 Medium Screens 
 */
 @media only screen and (max-width: 1280px) {
+    .property-item{
+        flex-direction: column;
+    }
 
 }
 /*
@@ -288,3 +251,83 @@ Large Phone Screens
 @media only screen and (max-width: 480px) {
 
 }
+
+/* Style pattern-white */
+.full-width{
+    max-width: fit-content;
+}
+.pattern-white .title-search-wrwpper{
+    color: #000;
+}
+.pattern-white  button.searchbtn{
+    background: #000;
+    color: #fff;
+}
+.pattern-white span.svg-icon svg path {
+    fill:#6e6e6e;
+}
+.pattern-white  a.rdmlink{
+    background: #6e6e6e;
+}
+.pattern-white a.rdmlink:hover {
+    background:#000
+}
+.pattern-white ul#properties-search-results li{
+    background: #fff
+}
+ .proprice{
+    color: #c47a06;
+    font-size: 20px;
+    font-weight: 400;
+}
+.pattern-white a.property_title{color: #000;}
+.pattern-dark a.property_title, .pattern-dark .property_asset{color: #fff;}
+
+.pattern-dark input {
+    background: #000;
+}
+.pattern-dark select {
+    background: #000;
+    color: #878787;
+}
+
+button.searchbtn.pattern-dark {
+    background: #ddd;
+    color: #000;
+}
+.pattern-dark .property-item {
+    background: #000;
+}
+
+.pattern-dark span.svg-icon svg path {
+    fill:#fff;
+}
+.pattern-dark  a.rdmlink{
+    background: #fff;
+     color: #000 !important;
+}
+.pattern-dark a.rdmlink:hover {
+   background: #ddd;
+   
+}
+/* Red */
+
+button.searchbtn.pattern-red{
+    background:#eb2f50;
+    color: #fff;
+    border: none
+}
+
+.pattern-red span.svg-icon svg path {
+    fill:#eb2f50;
+}
+.pattern-red  a.rdmlink{
+    background: #eb2f50;
+    color: #fff !important;
+}
+.pattern-red a.rdmlink:hover {
+   background: #000;
+   
+}
+
+.pattern-red .property-item{background:#ffe7e7;}

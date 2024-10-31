@@ -63,9 +63,8 @@ function add_properties_meta_fields() {
     Container::make('post_meta', 'Property Details')
             ->where('post_type', '=', 'property')
             ->add_fields([
-                Field::make('text', 'property_price', 'Price')
-                ->set_attribute('type', 'number')
-                ->set_help_text('Enter the property price in USD.'),
+                Field::make('text', 'property_price', 'Price')               
+                ->set_help_text('Enter the property price with currency.'),
                 Field::make('text', 'property_location', 'Location')
                 ->set_help_text('Enter the location of the property.'),
                  Field::make('text', 'property_location_area', 'Location Area'),

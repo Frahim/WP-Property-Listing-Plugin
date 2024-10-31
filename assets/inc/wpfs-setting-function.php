@@ -1,4 +1,5 @@
 <?php
+
 function properties_settings_page() {
     // Check if the user has the capability to manage options
     if (!current_user_can('manage_options')) {
@@ -7,12 +8,12 @@ function properties_settings_page() {
 
     // Add a submenu page under the 'Property' post type menu
     add_submenu_page(
-        'edit.php?post_type=property', // Parent slug
-        'Property Settings',             // Page title
-        'Property Settings',             // Menu title
-        'manage_options',                // Capability
-        'properties-settings',           // Menu slug
-        'properties_settings_page_html'  // Callback function
+            'edit.php?post_type=property', // Parent slug
+            'Property Settings', // Page title
+            'Property Settings', // Menu title
+            'manage_options', // Capability
+            'properties-settings', // Menu slug
+            'properties_settings_page_html'  // Callback function
     );
 }
 
@@ -38,25 +39,25 @@ function properties_settings_init() {
     register_setting('properties_options_group', 'properties_form_submit');
 
     add_settings_section(
-        'properties_settings_section',
-        'Manage Property Types',
-        'properties_settings_section_callback',
-        'properties-settings'
+            'properties_settings_section',
+            'Manage Property Types',
+            'properties_settings_section_callback',
+            'properties-settings'
     );
 
     add_settings_field(
-        'properties_field_title',
-        'Title',
-        'properties_field_title_render',
-        'properties-settings',
-        'properties_settings_section'
+            'properties_field_title',
+            'Title',
+            'properties_field_title_render',
+            'properties-settings',
+            'properties_settings_section'
     );
-     add_settings_field(
-        'properties_form_submit',
-        'Submit Button',
-        'properties_form_submit_render',
-        'properties-settings',
-        'properties_settings_section'
+    add_settings_field(
+            'properties_form_submit',
+            'Color pattern',
+            'properties_form_submit_render',
+            'properties-settings',
+            'properties_settings_section'
     );
 }
 
@@ -76,10 +77,9 @@ function properties_field_title_render() {
 function properties_form_submit_render() {
     $options = get_option('properties_form_submit'); // Fetch saved option value
     $choices = [
-        'bg-white' => 'BG White',
-        'bg-blue' => 'BG Blue',
-        'bg-dark' => 'BG Dark',
-        'bg-red' => 'BG Red',
+        'pattern-white' => 'Light',
+        'pattern-dark' => 'Dark',
+        'pattern-red' => 'Red',
     ];
     ?>
     <select name='properties_form_submit'>
@@ -91,4 +91,3 @@ function properties_form_submit_render() {
     </select>
     <?php
 }
-
